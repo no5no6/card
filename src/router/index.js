@@ -1,27 +1,32 @@
 import VueRouter from 'vue-router';
-import Index from '../views/Index.vue';
-import Work from '../views/Work.vue';
-import User from '../views/User.vue';
+import Home from '../views/Home.vue';
+import Gift from '../views/Gift.vue';
+import Set from '../views/Set.vue';
+import Test from '../views/Test.vue';
 
-Vue.use(VueRouter);
+// Vue.use(VueRouter);
 
 export default new VueRouter({
   routes: [
       {
-          path: '/user',
-          component: User
+          path: '/set',
+          component: Set
       },
       {
-          path: '/work',
-          component: Work
+          path: '/gift',
+          component: Gift
       },
       {
-          path: '/index',
-          component: Index
+          path: '/test',
+          component: Test
+      },
+      {
+          path: '/home',
+          component: Home
       },
       {
           path: '/',
-          component: Index
+          component: Home
       }
   ]
 })

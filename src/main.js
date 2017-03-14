@@ -10,11 +10,3 @@ new Vue({
   router,
   render: h => h(App),
 }).$mount('#root');
-
-// App.el = '#root'
-// export default new Vue(App)
-
-// const app = new Vue({
-//   store,
-//   router
-// }).$mount('#root')

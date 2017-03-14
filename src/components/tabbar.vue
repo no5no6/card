@@ -1,7 +1,7 @@
 <template>
   <div >
     <div class="titleRow tabbar" >
-      <div v-for="(item, index) in tabData" @click="tabChange(index)">
+      <div v-for="(item, index) in tabData" @click="tabChange(index, item.path)">
         <div class="tabItem">
           <div>
             <image :style="{width: item.imageWidth ? item.imageWidth : '60px', height: item.imageHeight ? item.imageHeight : '60px'}" :src="item.checked ? item.checkedImage : item.image">
@@ -28,16 +28,14 @@
           ]
       },
     },
-    data() {
-      return {
-
-      }
-
-    },
     methods: {
-      tabChange(index){
+      tabChange(index, path){
         this.tabData[index].tip = false;
         this.tabData.forEach((item, idx) => {item.checked = index === idx;});
+        this.$emit('tabChange', index, path);
+      },
+      setTip(index){
+        this.tabData[index].tip = true;
       }
     }
   }
